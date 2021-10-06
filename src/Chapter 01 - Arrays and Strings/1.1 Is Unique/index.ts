@@ -1,30 +1,28 @@
 /**
- * Returns boolean by determining uniqueness of all the characters inside a string
+ * Determines the uniqueness of all the characters inside a string
  *
  * Time complexity: O(N)
- * Space complexity: O(N)
+ * Space complexity: O(1) - Size of the map will be limited since total number of ASCII characters is of length 128
  *
  * @param str - The input string (array of single strings)
  * @returns `true` if the string has all unique characters otherwise `false`
  */
-export function isUnique(str: string[]): boolean {
+export function isUniqueChars(str: string[]): boolean {
     if (str.length <= 1) return true;
 
-    const charMap = new Map();
+    const charFreq = new Array(128);
 
     for (const char of str) {
-        if (char.trim()) {
-            if(charMap.get(char) === true) return false;
-
-            charMap.set(char, true);
-        }
+        const charCode = char.charCodeAt(0);
+        if(charFreq[charCode] === true) return false;
+        charFreq[charCode] = true;
     }
 
     return true;
 }
 
 /**
- * Returns boolean by determining uniqueness of all the characters inside a string
+ * Determines the uniqueness of all the characters inside a string
  *
  * Time complexity: O(NlogN)
  * Space complexity: O(1)
@@ -32,9 +30,10 @@ export function isUnique(str: string[]): boolean {
  * @param str - The input string (array of single strings)
  * @returns `true` if the string has all unique characters otherwise `false`
  */
-export function isUniqueWithNoAdditionalDataStructure(str: string[]): boolean {
+export function isUniqueCharsWithNoAdditionalDataStructure(str: string[]): boolean {
     if (str.length <= 1) return true;
 
+    // in place sorting
     str.sort();
 
     for (let i=1; i<str.length; i++) {
