@@ -15,8 +15,8 @@ export function isPalindroneOfPermutation(str: string): boolean {
     const charCodeA = "a".charCodeAt(0);
 
 
-    for (let ch of str) {
-        let charCode = ch.toLowerCase().charCodeAt(0) - charCodeA;
+    for (const ch of str) {
+        const charCode = ch.toLowerCase().charCodeAt(0) - charCodeA;
 
         if (charCode >= 0 && charCode <= 25) {
             charFreq[charCode] += 1;

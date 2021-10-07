@@ -1,8 +1,8 @@
 /**
  * Determines if one string is permutation of other
  *
- * Time Complexity: O(M+N)
- * Space Complexity: O(1): An array of size: 128
+ * Time complexity: O(M+N)
+ * Space complexity: O(1): An array of size: 128
  *
  * @param str1 - The first input string
  * @param str2 - The second input string
@@ -14,12 +14,12 @@ export function checkPermutation(str1: string[], str2: string[]): boolean {
 
     const list = new Array(128).fill(0); // ASCII characters
 
-    for (let ch of str1) {
+    for (const ch of str1) {
         const charCode = ch.charCodeAt(0);
         list[charCode] += 1;
     }
 
-    for (let ch of str2) {
+    for (const ch of str2) {
         const charCode = ch.charCodeAt(0);
         list[charCode] -= 1;
         if (list[charCode] < 0) {
