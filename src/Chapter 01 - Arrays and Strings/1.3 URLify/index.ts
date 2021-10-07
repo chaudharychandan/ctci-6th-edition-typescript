@@ -8,7 +8,7 @@
  * @param size - true size of the string (actual string without extra length at the end)
  * @returns nothing, In place operation
  */
-export function URLify(str: string[], size: number) {
+export function replaceSpaces(str: string[], size: number) {
     if (size === 0) return str;
     let j = str.length-1;
 

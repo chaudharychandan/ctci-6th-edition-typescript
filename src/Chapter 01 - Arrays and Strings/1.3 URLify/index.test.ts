@@ -1,5 +1,5 @@
 import {
-    URLify
+    replaceSpaces
 } from '.';
 
 /**
@@ -21,12 +21,12 @@ function areStringsEqual(str1: string[], str2: string[]): boolean {
     return true;
 }
 
-describe('URLify', () => {
+describe('replaceSpaces', () => {
     it('doesn\'t change anything when there is no space in the string', () => {
         const str = ["M", "r", "J", "o", "h", "n", "S", "m", "i", "t", "h"];
         const size = 11;
 
-        URLify(str, size);
+        replaceSpaces(str, size);
         const expectedResult = ["M", "r", "J", "o", "h", "n", "S", "m", "i", "t", "h"];
 
         expect(areStringsEqual(str, expectedResult)).toBe(true);
@@ -36,7 +36,7 @@ describe('URLify', () => {
         const str = ["M", "r", " ", "J", "o", "h", "n", " ", "S", "m", "i", "t", "h", "", "", "", ""];
         const size = 13;
 
-        URLify(str, size);
+        replaceSpaces(str, size);
         const expectedResult = ["M", "r", "%", "2", "0", "J", "o", "h", "n", "%", "2", "0", "S", "m", "i", "t", "h"];
 
         expect(areStringsEqual(str, expectedResult)).toBe(true);
