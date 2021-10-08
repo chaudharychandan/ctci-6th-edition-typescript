@@ -17,7 +17,14 @@
     return true;
 }
 
-export function areMatricesSimilar(mat1: number[][], mat2: number[][]) {
+/**
+ * Compare equality of two matrices
+ * 
+ * @param mat1 Input matrix
+ * @param mat2 Another matrix
+ * @returns `true` when all the cell values are same in both matrices, otherwise `false`
+ */
+export function areMatricesSimilar(mat1: number[][], mat2: number[][]): boolean {
     if (
         mat1.length !== mat2.length
         ||

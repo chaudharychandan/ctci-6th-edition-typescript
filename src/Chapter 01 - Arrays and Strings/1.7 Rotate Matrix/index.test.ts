@@ -4,7 +4,7 @@ import {
 
 import {
     areMatricesSimilar
-} from '../../utils';
+} from 'utils';
 
 describe('rotateMatrix', () => {
     it('rotates 3x3 matrix', () => {

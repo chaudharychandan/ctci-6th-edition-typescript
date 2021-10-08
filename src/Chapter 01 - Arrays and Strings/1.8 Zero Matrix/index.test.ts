@@ -4,7 +4,7 @@ import {
 
 import {
     areMatricesSimilar
-} from '../../utils';
+} from 'utils';
 
 describe('setZeros', () => {
     it('sets the entire row and coloumn to 0 of 3x3 matrix', () => {

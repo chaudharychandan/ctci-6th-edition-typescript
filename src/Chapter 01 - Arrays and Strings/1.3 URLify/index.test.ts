@@ -4,7 +4,7 @@ import {
 
 import {
     areStringsEqual
-} from '../../utils';
+} from 'utils';
 
 describe('replaceSpaces', () => {
     it('doesn\'t change anything when there is no space in the string', () => {
