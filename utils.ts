@@ -43,13 +43,12 @@ export function areMatricesSimilar(mat1: number[][], mat2: number[][]): boolean 
     return true;
 }
 
-export function areLinkedListsSimilar(head1: LinkedListNode|null, head2: LinkedListNode|null): boolean {
+export function areLinkedListsSimilar<T>(head1: LinkedListNode<T>|null, head2: LinkedListNode<T>|null): boolean {
     let curr1 = head1;
     let curr2 = head2;
 
     while (curr1 && curr2) {
         if (curr1.data !== curr2.data) return false;
-
         curr1 = curr1.next;
         curr2 = curr2.next;
     }
