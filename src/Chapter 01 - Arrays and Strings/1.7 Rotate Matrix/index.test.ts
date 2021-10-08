@@ -2,22 +2,9 @@ import {
     rotateMatrix
 } from '.';
 
-function areMatricesSame(mat1: number[][], mat2: number[][]) {
-    if (
-        mat1.length !== mat2.length
-        ||
-        mat1[0].length !== mat2[0].length
-    ) return false;
-
-    for (let i = 0; i < mat1.length; i++) {
-        const row = mat1[i];
-        for (let j = 0; j < row.length; j++) {
-            if (mat1[i][j] !== mat2[j][i]) return false;
-        }
-    }
-
-    return true;
-}
+import {
+    areMatricesSimilar
+} from '../../utils';
 
 describe('rotateMatrix', () => {
     it('rotates 3x3 matrix', () => {
@@ -26,7 +13,7 @@ describe('rotateMatrix', () => {
 
         rotateMatrix(matrix);
 
-        expect(areMatricesSame(matrix, expectedResult));
+        expect(areMatricesSimilar(matrix, expectedResult));
     });
 
     it('rotates 4x4 matrix', () => {
@@ -35,6 +22,6 @@ describe('rotateMatrix', () => {
 
         rotateMatrix(matrix);
 
-        expect(areMatricesSame(matrix, expectedResult));
+        expect(areMatricesSimilar(matrix, expectedResult));
     });
 });
