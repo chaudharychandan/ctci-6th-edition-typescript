@@ -4,44 +4,44 @@ import { areLinkedListsSimilar } from 'utils';
 
 describe('deleteDups', () => {
     it('ignores when head is null', () => {
-        const ll = new LinkedList();
+        const ll = new LinkedList<number>();
 
-        deleteDups(ll.head);
+        deleteDups<number>(ll.head);
 
         expect(ll.head).toBe(null);
     });
 
     it('ignores when there is only one node in linked list', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(10);
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(10);
 
-        deleteDups(ll1.head);
+        deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
 
         expect(result).toBe(true);
     });
 
     it('removes one duplicate node out of two', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(10);
         ll1.add(10);
         ll1.add(10);
         ll1.add(10);
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(10);
 
-        deleteDups(ll1.head);
+        deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
 
         expect(result).toBe(true);
     });
 
     it('removes duplicate nodes', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(1);
         ll1.add(2);
         ll1.add(2);
@@ -53,7 +53,7 @@ describe('deleteDups', () => {
         ll1.add(6);
 
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(1);
         ll2.add(2);
         ll2.add(3);
@@ -61,7 +61,7 @@ describe('deleteDups', () => {
         ll2.add(5);
         ll2.add(6);
 
-        deleteDups(ll1.head);
+        deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
 
         expect(result).toBe(true);
@@ -70,7 +70,7 @@ describe('deleteDups', () => {
 
 describe('deleteDupsWithNoBuffer', () => {
     it('ignores when head is null', () => {
-        const ll = new LinkedList();
+        const ll = new LinkedList<number>();
 
         deleteDupsWithNoBuffer(ll.head);
 
@@ -78,10 +78,10 @@ describe('deleteDupsWithNoBuffer', () => {
     });
 
     it('ignores when there is only one node in linked list', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(10);
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(10);
 
         deleteDupsWithNoBuffer(ll1.head);
@@ -91,13 +91,13 @@ describe('deleteDupsWithNoBuffer', () => {
     });
 
     it('removes one duplicate node out of two', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(10);
         ll1.add(10);
         ll1.add(10);
         ll1.add(10);
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(10);
 
         deleteDupsWithNoBuffer(ll1.head);
@@ -107,7 +107,7 @@ describe('deleteDupsWithNoBuffer', () => {
     });
 
     it('removes duplicate nodes', () => {
-        const ll1 = new LinkedList();
+        const ll1 = new LinkedList<number>();
         ll1.add(1);
         ll1.add(2);
         ll1.add(2);
@@ -119,7 +119,7 @@ describe('deleteDupsWithNoBuffer', () => {
         ll1.add(6);
 
 
-        const ll2 = new LinkedList();
+        const ll2 = new LinkedList<number>();
         ll2.add(1);
         ll2.add(2);
         ll2.add(3);

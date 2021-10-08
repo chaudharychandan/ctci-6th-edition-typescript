@@ -9,11 +9,11 @@ import { LinkedListNode } from 'data-structures/singly-linked-list';
  * @param node Linked list head node
  * @returns void
  */
-export function deleteDups(head: LinkedListNode|null) {
+export function deleteDups<T>(head: LinkedListNode<T>|null) {
     if (head === null || head.next === null) return;
 
-    let curr: LinkedListNode|null = head;
-    let prev: LinkedListNode|null = null;
+    let curr: LinkedListNode<T>|null = head;
+    let prev: LinkedListNode<T>|null = null;
     const map = new Map();
 
 
@@ -39,10 +39,10 @@ export function deleteDups(head: LinkedListNode|null) {
  * @param node Linked list head node
  * @returns void
  */
- export function deleteDupsWithNoBuffer(head: LinkedListNode|null) {
+ export function deleteDupsWithNoBuffer<T>(head: LinkedListNode<T>|null) {
     if (head === null || head.next === null) return;
 
-    let curr: LinkedListNode|null = head;
+    let curr: LinkedListNode<T>|null = head;
 
     while (curr) {
         let runner = curr;
