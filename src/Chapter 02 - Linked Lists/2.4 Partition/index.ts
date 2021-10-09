@@ -5,6 +5,9 @@ import { LinkedListNode } from "data-structures/singly-linked-list";
  * such that all nodes less than x come
  * before all the nodes greater than or equal to x
  *
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ *
  * @param head - head node of the singly linked list
  * @param x - the value around which partition needs to be performed
  */
