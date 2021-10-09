@@ -13,9 +13,8 @@ describe('deleteNode', () => {
 
     it('ignores when the node is the last node', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(1);
-        ll1.add(2);
-        const node = ll1.add(3);
+        ll1.addNodesAtEnd([1, 2]);
+        const node = ll1.addNodeAtEnd(3);
 
         deleteNode<number>(node);
 
@@ -24,17 +23,12 @@ describe('deleteNode', () => {
 
     it('deletes the nodedle node when linked list has odd nodes', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(1);
-        ll1.add(2);
-        const node = ll1.add(3);
-        ll1.add(4);
-        ll1.add(5);
+        ll1.addNodesAtEnd([1, 2]);
+        const node = ll1.addNodeAtEnd(3);
+        ll1.addNodesAtEnd([4, 5]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(1);
-        ll2.add(2);
-        ll2.add(4);
-        ll2.add(5);
+        ll2.addNodesAtEnd([1, 2, 4, 5]);
 
         deleteNode<number>(node);
 
@@ -43,17 +37,11 @@ describe('deleteNode', () => {
 
     it('deletes the nodedle node when linked list has even nodes', () => {
         const ll1 = new LinkedList<number>();
-        const node = ll1.add(1);
-        ll1.add(2);
-        ll1.add(3);
-        ll1.add(4);
-        ll1.add(5);
+        const node = ll1.addNodeAtEnd(1);
+        ll1.addNodesAtEnd([2, 3, 4, 5]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(2);
-        ll2.add(3);
-        ll2.add(4);
-        ll2.add(5);
+        ll2.addNodesAtEnd([2, 3, 4, 5]);
 
         deleteNode<number>(node);
 

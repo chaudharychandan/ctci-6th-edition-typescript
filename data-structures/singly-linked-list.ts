@@ -12,7 +12,7 @@ export class LinkedList<T> {
     head: LinkedListNode<T>|null = null;
     tail: LinkedListNode<T>|null = null;
 
-    add(data: T): LinkedListNode<T> {
+    addNodeAtEnd(data: T): LinkedListNode<T> {
         const node = new LinkedListNode<T>(data);
         if (this.head === null || this.tail === null) {
             this.head = node;
@@ -22,5 +22,11 @@ export class LinkedList<T> {
             this.tail = this.tail.next;
         }
         return node;
+    }
+
+    addNodesAtEnd(list: T[]): void {
+        for (const data of list) {
+            this.addNodeAtEnd(data);
+        }
     }
 }

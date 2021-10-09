@@ -13,10 +13,10 @@ describe('deleteDups', () => {
 
     it('ignores when there is only one node in linked list', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(10);
+        ll1.addNodeAtEnd(10);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(10);
+        ll2.addNodeAtEnd(10);
 
         deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
@@ -26,13 +26,10 @@ describe('deleteDups', () => {
 
     it('removes one duplicate node out of two', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(10);
-        ll1.add(10);
-        ll1.add(10);
-        ll1.add(10);
+        ll1.addNodesAtEnd([10, 10]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(10);
+        ll2.addNodeAtEnd(10);
 
         deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
@@ -42,24 +39,10 @@ describe('deleteDups', () => {
 
     it('removes duplicate nodes', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(1);
-        ll1.add(2);
-        ll1.add(2);
-        ll1.add(3);
-        ll1.add(1);
-        ll1.add(4);
-        ll1.add(3);
-        ll1.add(5);
-        ll1.add(6);
-
+        ll1.addNodesAtEnd([1, 2, 2, 3, 1, 4, 3, 5, 6]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(1);
-        ll2.add(2);
-        ll2.add(3);
-        ll2.add(4);
-        ll2.add(5);
-        ll2.add(6);
+        ll2.addNodesAtEnd([1, 2, 3, 4, 5, 6]);
 
         deleteDups<number>(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
@@ -79,10 +62,10 @@ describe('deleteDupsWithNoBuffer', () => {
 
     it('ignores when there is only one node in linked list', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(10);
+        ll1.addNodeAtEnd(10);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(10);
+        ll2.addNodeAtEnd(10);
 
         deleteDupsWithNoBuffer(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
@@ -92,13 +75,10 @@ describe('deleteDupsWithNoBuffer', () => {
 
     it('removes one duplicate node out of two', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(10);
-        ll1.add(10);
-        ll1.add(10);
-        ll1.add(10);
+        ll1.addNodesAtEnd([10, 10]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(10);
+        ll2.addNodeAtEnd(10);
 
         deleteDupsWithNoBuffer(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
@@ -108,24 +88,10 @@ describe('deleteDupsWithNoBuffer', () => {
 
     it('removes duplicate nodes', () => {
         const ll1 = new LinkedList<number>();
-        ll1.add(1);
-        ll1.add(2);
-        ll1.add(2);
-        ll1.add(3);
-        ll1.add(1);
-        ll1.add(4);
-        ll1.add(3);
-        ll1.add(5);
-        ll1.add(6);
-
+        ll1.addNodesAtEnd([1, 2, 2, 3, 1, 4, 3, 5, 6]);
 
         const ll2 = new LinkedList<number>();
-        ll2.add(1);
-        ll2.add(2);
-        ll2.add(3);
-        ll2.add(4);
-        ll2.add(5);
-        ll2.add(6);
+        ll2.addNodesAtEnd([1, 2, 3, 4, 5, 6]);
 
         deleteDupsWithNoBuffer(ll1.head);
         const result = areLinkedListsSimilar(ll1.head, ll2.head);
