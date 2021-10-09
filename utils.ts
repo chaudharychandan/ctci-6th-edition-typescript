@@ -21,7 +21,7 @@ import { LinkedListNode } from "data-structures/singly-linked-list";
 
 /**
  * Compare equality of two matrices
- * 
+ *
  * @param mat1 Input matrix
  * @param mat2 Another matrix
  * @returns `true` when all the cell values are same in both matrices, otherwise `false`

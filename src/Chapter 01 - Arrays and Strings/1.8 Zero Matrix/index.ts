@@ -6,7 +6,7 @@
  *
  * @param matrix The input NxM matrix
  */
-export function setZeros(matrix: number[][]) {
+export function setZeros(matrix: number[][]): void {
     let rowHasZero = false;
     let coloumnHasZero = false;
 
@@ -61,13 +61,13 @@ export function setZeros(matrix: number[][]) {
     }
 }
 
-function zeroifyRow(matrix: number[][], rowIndex: number) {
+function zeroifyRow(matrix: number[][], rowIndex: number): void {
     for (let j = 0; j < matrix[rowIndex].length; j++) {
         matrix[rowIndex][j] = 0;
     }
 }
 
-function zeroifyCol(matrix: number[][], colIndex: number) {
+function zeroifyCol(matrix: number[][], colIndex: number): void {
     for (const row of matrix) {
         row[colIndex] = 0;
     }

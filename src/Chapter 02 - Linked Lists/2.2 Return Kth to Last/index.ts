@@ -25,8 +25,8 @@ export function kthToLast<T>(head: LinkedListNode<T>|null, k: number): T|null {
 
     while (curr1) {
         curr1 = curr1.next;
-        curr2 = curr2!.next;
+        if (curr2?.next) curr2 = curr2.next;
     }
 
-    return curr2!.data;
+    return curr2.data;
 }

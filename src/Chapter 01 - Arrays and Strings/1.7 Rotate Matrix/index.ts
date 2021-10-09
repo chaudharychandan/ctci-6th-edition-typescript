@@ -7,8 +7,8 @@
  * @param matrix N*N number matrix
  * @returns undefined
  */
-export function rotateMatrix(matrix: number[][]) {
-    if (matrix.length === 0 || matrix[0].length === 0) return matrix;
+export function rotateMatrix(matrix: number[][]): void {
+    if (matrix.length === 0 || matrix[0].length === 0) return;
 
     for (let i = 0; i < matrix.length; i++) {
         const row = matrix[i];
