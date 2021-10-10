@@ -24,7 +24,7 @@ describe('sumLists', () => {
         const ll3 = new LinkedList<number>();
         ll3.addNodesAtEnd([2, 1, 9]);
 
-        expect(areLinkedListsSimilar(result, ll3.head));
+        expect(areLinkedListsSimilar(result, ll3.head)).toBe(true);
     });
 
     it('adds two linked list node values and returns a new list when number of digits are different', () => {
@@ -38,6 +38,6 @@ describe('sumLists', () => {
         const ll3 = new LinkedList<number>();
         ll3.addNodesAtEnd([2, 1, 9, 0, 0, 1]);
 
-        expect(areLinkedListsSimilar(result, ll3.head));
+        expect(areLinkedListsSimilar(result, ll3.head)).toBe(true);
     });
 });
