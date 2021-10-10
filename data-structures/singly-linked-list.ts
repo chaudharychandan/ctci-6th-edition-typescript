@@ -41,4 +41,16 @@ export class LinkedList<T> {
             this.addNodeAtEnd(data);
         }
     }
+
+    static size(head: LinkedListNode<T>|null): number {
+        let count = 0;
+        let curr = head;
+
+        while(curr) {
+            count++;
+            curr = curr.next;
+        }
+
+        return count;
+    }
 }
