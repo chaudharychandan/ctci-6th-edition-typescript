@@ -24,7 +24,7 @@ export class Queue<T> {
         }
         this.rear = node;
 
-        if (this.front === this.rear) {
+        if (this.front === null) {
             this.front = this.rear;
         }
     }
