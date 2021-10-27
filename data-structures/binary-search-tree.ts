@@ -19,23 +19,25 @@ export class BST {
         this.root = null;
     }
 
-    insert(value: number, root: TreeNode|null = this.root): void {
+    insert(value: number, root: TreeNode|null = this.root): TreeNode {
         if (!root) {
             this.root = new TreeNode(value);
-            return;
+            return this.root;
         }
 
         if (value < root.value) {
             if (root.left === null) {
                 root.left = new TreeNode(value);
+                return root.left;
             } else {
-                this.insert(value, root.left);
+                return this.insert(value, root.left);
             }
         } else {
             if (root.right === null) {
                 root.right = new TreeNode(value);
+                return root.right;
             } else {
-                this.insert(value, root.right);
+                return this.insert(value, root.right);
             }
         }
     }
