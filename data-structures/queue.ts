@@ -51,4 +51,17 @@ export class Queue<T> {
     isEmpty(): boolean {
         return this.front === null;
     }
+
+    size(): number {
+        if (this.front === null) return 0;
+        let count = 1;
+        let curr: QueueNode<T>|null = this.front;
+
+        while (curr && curr !== this.rear) {
+            count++;
+            curr = curr.next;
+        }
+
+        return count;
+    }
 }
