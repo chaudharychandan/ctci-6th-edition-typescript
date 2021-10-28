@@ -1,4 +1,4 @@
-import { BST, TreeNode } from 'data-structures/binary-search-tree';
+import { TreeNode } from 'data-structures/binary-search-tree';
 import { Queue } from 'data-structures/queue';
 import { LinkedList } from 'data-structures/singly-linked-list';
 
