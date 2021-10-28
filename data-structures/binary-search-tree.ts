@@ -25,7 +25,7 @@ export class BST {
             return this.root;
         }
 
-        if (value < root.value) {
+        if (value <= root.value) {
             if (root.left === null) {
                 root.left = new TreeNode(value);
                 return root.left;
