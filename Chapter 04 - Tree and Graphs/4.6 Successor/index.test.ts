@@ -1,4 +1,5 @@
-import { BST, TreeNode, findSuccessor } from '.';
+import { findSuccessor } from '.';
+import { BST, TreeNode } from 'data-structures/binary-search-tree-v2';
 
 describe('findSuccessor', () => {
     let bst: BST;
